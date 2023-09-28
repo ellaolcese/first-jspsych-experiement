@@ -6,7 +6,9 @@
     <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.1.2"></script>
     <link href="https://unpkg.com/jspsych@7.3.3/css/jspsych.css" rel="stylesheet" type="text/css" />
     <script src="https://unpkg.com/@jspsych/plugin-survey-text@1.1.2"></script>
-    <script src="https://unpkg.com/@jspsych/plugin-image-keyboard-response@1.1.2"></script>
+    <script src="jspsych/modified-image-plugin.js"></script>
+    
+
   </head>
   <body></body>
   <script>
@@ -44,15 +46,23 @@ var sentence = {
             var prime = { 
                 type: jsPsychImageKeyboardResponse,
                 stimulus: "applehorse.png",
-                //trial_duration: 300,
+                trial_duration: 300,
                 choices: "NO_KEYS",
                 stimulus_width: 500,
                 maintain_aspect_ratio: true,
-                prompt: "<br>foobly<br>"
+                prompt: "<span style= 'font-size:170%'>foobly<br><br></span>"
+            };
+            var target = {
+                type: jsPsychImageKeyboardResponse,
+                stimulus: "applehorse.png",
+                choices: ['A', 'L'],
+                stimulus_width: 500,
+                maintain_aspect_ratio: true,
+                prompt: "<span style= 'font-size:170%'>apple<br><br></span>"
             }
 
 
-            jspsych.run([sentence, attention, association, fixation, image, prime]);
+            jspsych.run([sentence, attention, association, fixation, image, prime, target]);
         
 
 

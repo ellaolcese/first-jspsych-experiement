@@ -174,7 +174,7 @@ var slow_experiment_trial = {
 
 var priming_feedback = {
     timeline: [slow_experiment_trial],
-    conditional_funtion: function(){
+    conditional_function: function(){
         var rt = jsPsych.data.get().last(1).values()[0].rt;
         if (rt > 800){
             return true;
@@ -216,7 +216,6 @@ var prime = {
 var target = {
     type: jsPsychImageKeyboardResponse,
     stimulus: jsPsych.timelineVariable('image_path'),
-    trial_duration: 300,
     choices: ['A', 'L'],
     stimulus_width: 500,
     maintain_aspect_ratio: true,

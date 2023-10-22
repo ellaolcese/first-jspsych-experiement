@@ -1,0 +1,17 @@
+---
+title: "R Notebook"
+output: html_document
+date: "2023-10-17"
+---
+
+# install packages
+```{r}
+#install.packages("tidyverse")
+```
+
+# load packages
+
+```{r}
+
+```
+
